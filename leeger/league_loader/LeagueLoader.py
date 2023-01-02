@@ -23,12 +23,24 @@ class LeagueLoader:
         # this prevents issues where an owner with a name change across years is counted as 2 different owners.
         # this should be formatted like so:
         # ownerNamesAndAliases = {"someOwnerNameIWant": ["alias1", "alias2"],
-        #                           someOtherOwnerNameIWant: ["alias3", "alias4"]}
-        self._ownerNamesAndAliases: dict[str, list[str]] = kwargs.get("ownerNamesAndAliases", dict())
-
+        #                           someOtherOwnerNameIWant: ["alias3", "alias4"]}2222
+        
+        ownerNamesAndAliases = ("ryan o": ["Brandon Todd", "ryan o"],
+                                "Shawn Hughes": ["Shawn Hughes"],
+                                "Jake LeFort": ["Jake LeFort"],
+                                "Kevin Johnson": ["Kevin Johnson"],
+                                "Jack McGinn": ["Jack McGinn"],
+                                "Robert Luther": ["Robert Luther"],
+                                "Peyton Phillips": ["Peyton Phillips"],
+                                "Jacob Summerly": ["Jacob Summerly"],
+                                "Thomas Arsenault": ["Thomas Arsenault"],
+                                "Max DiMonte": ["Max DiMonte"],
+                                "James Martinez": ["James Martinez"],
+                                "Vince DiMonte": ["Vince DiMonte"]) 
         # validation
         if len(years) == 0:
             raise ValueError(f"No years given to load league with ID '{self._leagueId}'.")
+
 
     def _getGeneralOwnerNameFromGivenOwnerName(self, givenOwnerName: str) -> Optional[str]:
         foundGeneralOwnerName = None
